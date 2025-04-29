@@ -40,7 +40,7 @@ body{
 
 #menu-icon{
   font-size: 3.5rem;
-  color:var(--main-color);
+  color:orangered;
   display: none;
 }
 
@@ -89,24 +89,21 @@ span{
 }
 
 .gradient-btn{
+  margin-left: 60px;
   font-size: 1.8rem;
   padding: 1rem 2rem	;
   border-radius: 3rem;
-  background: linear-gradient(	
-    270,
-    #DF8908 10%,
-    #FF1D15 100%
-);
   letter-spacing: 1px;
   cursor: pointer;
   transition: 0.3s ease-in-out;
-  color:  #FF1D15 100%;
+  background-color: #ea580c;
   border: none;
   text-wrap: nowrap;
 
 }
 .gradient-btn:hover{
   transform: scale(1.05);
+  
 }
 
 
