@@ -277,6 +277,7 @@ section{
 
 .heading{
   text-align: center;
+  color: aliceblue;
   font-size: 7rem;
   margin: 5rem 0;
 }
@@ -390,10 +391,12 @@ section{
 
 .project-card h3{
   font-size: 3rem;
+  color: aliceblue;
 }
 
 .project-card p{
   font-size: 1.6rem;
+  color: aliceblue;
 }
 
 .contact{
@@ -454,6 +457,10 @@ section{
 
 .footer ul li a:hover{
   border-bottom:3px solid var(--main-color) ;
+}
+
+.footer .social-icons{
+  margin-right: 100px;
 }
 
 .footer .copyright{
