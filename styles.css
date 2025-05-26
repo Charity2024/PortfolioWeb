@@ -540,6 +540,18 @@ section{
     margin: 2rem 0;
     color: var(--main-color);
   }
+
+  .header.button.theme-toggle{
+    position: fixed;
+    width: 50px;
+    border-radius: 50%;
+    
+  }
+  .light-mode {
+  background-color: #c66312;
+  color: white;
+}
+
   
 
 
