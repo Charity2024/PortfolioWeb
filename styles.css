@@ -461,7 +461,7 @@ textarea:focus {
   flex: 1 1 250px; /* smaller card width */
   background-color: var(--bg-color);
   border-radius: 1rem;
-  padding: 1.8rem; /* reduced padding */
+  padding: 2rem; /* reduced padding */
   box-shadow: 0 0 10px rgba(255, 87, 34, 0.12);
   border: 1px solid var(--main-color);
   transition: transform 0.3s ease;
@@ -508,7 +508,7 @@ textarea:focus {
 .footer-bottom {
   text-align: center;
   font-size: 1.4rem;
-  color:var(--main-color);
+  color:var(--text-color);
   margin-top: 2rem;
 }
 
