@@ -473,7 +473,7 @@ textarea:focus {
 
 .footer-card h3 {
   font-size: 1.6rem;
-  margin-bottom: 1.2rem;
+  margin-bottom: 0.2rem;
   color: var(--main-color);
 }
 
@@ -503,6 +503,13 @@ textarea:focus {
   color: var(--text-color);
   transform: scale(1.1);
   box-shadow: 0 0 10px var(--main-color);
+}
+
+.footer-bottom {
+  text-align: center;
+  font-size: 1.4rem;
+  color:var(--main-color);
+  margin-top: 2rem;
 }
 
 /* Scrollbar */
