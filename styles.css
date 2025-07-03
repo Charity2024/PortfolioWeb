@@ -58,15 +58,15 @@ body{
 span{
   background: linear-gradient(
     270deg,
-    #DF8908 10%,
-    #FF1D15 100%
+    #f4a261 10%,
+    #cc5500 100%
   );
   background-clip: text;
   color: transparent;
   letter-spacing: 1px;
   cursor: pointer;
   transition: 0.3s ease-in-out;
-  color:  #FF1D15 100%;
+  color:  #cc5500 100%;
   border:none;
   text-wrap: nowrap;
 
@@ -96,7 +96,7 @@ span{
   letter-spacing: 1px;
   cursor: pointer;
   transition: 0.3s ease-in-out;
-  background-color: #ea580c;
+  background-color: #cc5500;
   border: none;
   text-wrap: nowrap;
 
