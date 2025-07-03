@@ -470,7 +470,7 @@ section{
 
 }
 
-@media(maxwidth:1285px){
+@media(max-width:1285px){
   #menu-icon{
     display: block;
   }

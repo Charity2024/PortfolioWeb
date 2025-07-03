@@ -3,244 +3,308 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Portfolio Website</title>
+    <title>Charity Silah | Portfolio</title>
     <link rel="stylesheet" href="styles.css" />
-    <link
-      href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css"
-      rel="stylesheet"
-    />
+    <link href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css" rel="stylesheet" />
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+        font-family: "Poppins", sans-serif;
+      }
+
+      :root {
+        --bg-color: #080808;
+        --second-bg-color: #101010;
+        --text-color: white;
+        --main-color: #ea580c;
+      }
+
+      body {
+        background-color: var(--bg-color);
+        color: var(--text-color);
+        line-height: 1.6;
+      }
+
+      header {
+        position: fixed;
+        width: 100%;
+        top: 0;
+        left: 0;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 1rem 5%;
+        background: rgba(0, 0, 0, 0.6);
+        z-index: 1000;
+      }
+
+      .logo {
+        font-size: 2rem;
+        font-weight: 700;
+        color: var(--text-color);
+      }
+
+      nav.navbar {
+        display: flex;
+        align-items: center;
+        gap: 1.5rem;
+      }
+
+      nav.navbar a {
+        color: var(--text-color);
+        font-size: 1rem;
+        transition: color 0.3s ease;
+      }
+
+      nav.navbar a:hover {
+        color: var(--main-color);
+      }
+
+      #menu-icon {
+        display: none;
+        font-size: 2rem;
+        color: var(--main-color);
+        cursor: pointer;
+      }
+
+      .gradient-btn {
+        background-color: var(--main-color);
+        color: white;
+        padding: 0.6rem 1.2rem;
+        border: none;
+        border-radius: 20px;
+        font-size: 1rem;
+        cursor: pointer;
+        transition: 0.3s ease;
+      }
+
+      .gradient-btn:hover {
+        transform: scale(1.05);
+      }
+
+      section {
+        padding: 6rem 5%;
+      }
+
+      .home,
+      .about {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        flex-wrap: wrap;
+        gap: 2rem;
+      }
+
+      .home-content,
+      .about-content {
+        flex: 1 1 45%;
+      }
+
+      .home-img img,
+      .about-img img {
+        width: 100%;
+        max-width: 400px;
+        border-radius: 20px;
+        box-shadow: 0 0 20px var(--main-color);
+      }
+
+      .heading {
+        text-align: center;
+        font-size: 2rem;
+        margin-bottom: 2rem;
+      }
+
+      .service-container,
+      .project-box {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+        gap: 2rem;
+      }
+
+      .service-box,
+      .project-card {
+        background-color: var(--second-bg-color);
+        padding: 2rem;
+        border-radius: 15px;
+        box-shadow: 0 0 10px var(--main-color);
+        transition: 0.3s ease;
+      }
+
+      .service-box:hover,
+      .project-card:hover {
+        transform: scale(1.03);
+      }
+
+      .btn {
+        display: inline-block;
+        margin-top: 1rem;
+        background-color: var(--main-color);
+        color: black;
+        padding: 0.6rem 1.5rem;
+        border-radius: 30px;
+        font-weight: bold;
+        transition: 0.3s ease;
+      }
+
+      .btn:hover {
+        background-color: #fff;
+        color: var(--main-color);
+      }
+
+      .contact form {
+        display: flex;
+        flex-direction: column;
+        gap: 1rem;
+      }
+
+      .input-group {
+        display: flex;
+        flex-direction: column;
+        gap: 1rem;
+      }
+
+      .input-group input,
+      textarea {
+        padding: 0.8rem;
+        border-radius: 10px;
+        border: 1px solid var(--main-color);
+        background-color: var(--bg-color);
+        color: white;
+        resize: none;
+      }
+
+      footer {
+        text-align: center;
+        padding: 2rem;
+        background-color: var(--second-bg-color);
+        font-size: 1rem;
+      }
+
+      footer .social-icons {
+        margin-bottom: 1rem;
+      }
+
+      .social-icons a {
+        color: var(--main-color);
+        margin: 0 0.5rem;
+        font-size: 1.5rem;
+        transition: 0.3s;
+      }
+
+      .social-icons a:hover {
+        color: white;
+      }
+
+      @media screen and (max-width: 768px) {
+        .home,
+        .about {
+          flex-direction: column-reverse;
+          text-align: center;
+        }
+
+        nav.navbar {
+          display: none;
+          flex-direction: column;
+          background: #000;
+          position: absolute;
+          top: 60px;
+          right: 10px;
+          padding: 1rem;
+          border-radius: 10px;
+        }
+
+        nav.navbar.active {
+          display: flex;
+        }
+
+        #menu-icon {
+          display: block;
+        }
+      }
+    </style>
   </head>
   <body>
-
-    <header class="header">
-      <a href="#Home" class="logo">
-        Charity <span>Silah</span>
-      </a>
+    <header>
+      <a href="#home" class="logo">Charity <span>Silah</span></a>
       <i class="bx bx-menu" id="menu-icon"></i>
-
       <nav class="navbar">
         <a href="#home">Home</a>
         <a href="#about">About</a>
         <a href="#services">Services</a>
         <a href="#projects">Projects</a>
-        <a href="#contact">Contact Me</a>
-        <button class="gradient-btn">Contact Me</button>
-        
-
+        <a href="#contact">Contact</a>
+        <button class="gradient-btn">Let's Talk</button>
       </nav>
-      <button id="theme-toggle">Toggle Dark Mode</button>
     </header>
 
     <section class="home" id="home">
       <div class="home-content">
-        <h1>Hi, It's <span>Charity</span></h1>
-        <h3> I'm a <span>Web Developer</span></h3>
-        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Nobis necessitatibus vero magnam officiis provident atque porro maxime. Dolore mollitia non, magni amet ullam cupiditate vel, iure, ex rem excepturi odio.</p>
-      
+        <h1>Hello, I'm <span>Charity</span></h1>
+        <h3>A Passionate <span>Web Developer</span></h3>
+        <p>Creating beautiful, responsive, and user-friendly websites.</p>
         <div class="social-icons">
-        <a href="https://github.com/Charity2024">
-          <i class="bx bxl-github"></i>
-        </a>
-
-        <a href="www.linkedin.com/in/charitysilah">
-          <i class="bx bxl-linkedin-square"></i>
-        </a>
-
-        <a href="#">
-          <i class="bx bxl-instagram-alt"></i>
-        </a>
-
-        <a href="https://x.com/CharitySilah">
-          <i class="bx bxl-twitter"></i>
-        </a>
-
-        <div class="btn-group">
-          <a href="#" class="btn">Hire</a>
-          <a href="#contact" class="btn">Contact</a>
+          <a href="https://github.com/Charity2024"><i class="bx bxl-github"></i></a>
+          <a href="https://linkedin.com/in/charitysilah"><i class="bx bxl-linkedin-square"></i></a>
+          <a href="#"><i class="bx bxl-instagram-alt"></i></a>
+          <a href="https://x.com/CharitySilah"><i class="bx bxl-twitter"></i></a>
         </div>
-
-
-      </div>
+        <a href="#contact" class="btn">Get in Touch</a>
       </div>
       <div class="home-img">
-        <img src="image.jpg" alt="">
+        <img src="image.jpg" alt="Charity's photo" />
       </div>
     </section>
 
-
+    <!-- Add the rest of the sections: About, Services, Projects, Contact, Footer -->
     <section class="about" id="about">
-
-      <div class="about-img">
-        <img src="image.jpg" alt="">
-      </div>
       <div class="about-content">
-        <h2>About <span>Me</span></h2>
-        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Magnam praesentium distinctio vitae unde cupiditate similique quibusdam quam laboriosam amet cumque ratione, sunt, dolor adipisci iste ipsum, voluptatibus quasi repellendus esse?</p>
-        
-        <a href="#" class="btn">Read More</a>
+        <h2>About Me</h2>
+        <p>
+          I am a web developer with a passion for creating dynamic and responsive websites. I love coding and enjoy the challenge of solving complex problems.
+        </p>
+        <p>
+          My journey in web development started with a simple HTML page, and since then, I have expanded my skills to include CSS, JavaScript, and various frameworks.
+        </p>
       </div>
-
-
+      <div class="about-img">
+        <img src="./image.jpg" alt="About me image" />
+      </div>
     </section>
-
-    <section class="service" id="service">
-      <h2 class="heading">Services</h2>
+    <section class="services" id="services">
+      <h2 class="heading">My Services</h2>
       <div class="service-container">
         <div class="service-box">
-          <div class="service-info">
-            <i class="bx bxl-figma"></i>
-            <h4>  UI / UX Designs</h4>
-            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Molestiae aspernatur neque excepturi explicabo. Quasi modi recusandae illo exercitationem nam alias ad, minima totam quos aliquid, corrupti repudiandae sapiente nostrum esse.</p>
-          
-          </div>
+          <h3>Web Development</h3>
+          <p>Building responsive and user-friendly websites.</p>
         </div>
-
-       <div class="service-box">
-          <div class="service-info">
-            <i class="bx bxl-code"></i>
-            <h4>  Frontend Development</h4>
-            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Molestiae aspernatur neque excepturi explicabo. Quasi modi recusandae illo exercitationem nam alias ad, minima totam quos aliquid, corrupti repudiandae sapiente nostrum esse.</p>
-          
-          </div>
-        </div>
-
         <div class="service-box">
-          <div class="service-info">
-            <i class="bx bxl-code-curly"></i>
-            <h4>  Backend Development</h4>
-            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Molestiae aspernatur neque excepturi explicabo. Quasi modi recusandae illo exercitationem nam alias ad, minima totam quos aliquid, corrupti repudiandae sapiente nostrum esse.</p>
-          
-          </div>
+          <h3>UI/UX Design</h3>
+          <p>Creating intuitive and engaging user interfaces.</p>
+        </div>
+        <div class="service-box">
+          <h3>SEO Optimization</h3>
+          <p>Improving website visibility on search engines.</p>
         </div>
       </div>
     </section>
-
-    <section class="projects" id="projects">
-      <h2 class="heading">Projects</h2>
-      <div class="project-card">
-        <img src="image.jpg" alt="">
-        <h3>Project 1</h3>
-        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quod quas optio expedita asperiores, illo dolorem tempore quam ab, iste sunt praesentium. Hic culpa, itaque in voluptatem nihil ipsam porro dicta?</p>
-      <div class="btn">Review Project</div>
-      </div>
-
-      <div class="project-card">
-        <img src="image.jpg" alt="">
-        <h3>Project 1</h3>
-        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quod quas optio expedita asperiores, illo dolorem tempore quam ab, iste sunt praesentium. Hic culpa, itaque in voluptatem nihil ipsam porro dicta?</p>
-      <div class="btn">Review Project</div>
-      </div>
-
-      <div class="project-card">
-        <img src="image.jpg" alt="">
-        <h3>Project 1</h3>
-        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quod quas optio expedita asperiores, illo dolorem tempore quam ab, iste sunt praesentium. Hic culpa, itaque in voluptatem nihil ipsam porro dicta?</p>
-      <div class="btn">Review Project</div>
-      </div>
-
-      <div class="project-card">
-        <img src="image.jpg" alt="">
-        <h3>Project 2</h3>
-        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quod quas optio expedita asperiores, illo dolorem tempore quam ab, iste sunt praesentium. Hic culpa, itaque in voluptatem nihil ipsam porro dicta?</p>
-      <div class="btn">Review Project</div>
-      </div>
-
-      <div class="project-card">
-        <img src="image.jpg" alt="">
-        <h3>Project 3</h3>
-        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quod quas optio expedita asperiores, illo dolorem tempore quam ab, iste sunt praesentium. Hic culpa, itaque in voluptatem nihil ipsam porro dicta?</p>
-      <div class="btn">Review Project</div>
-      </div>
-
-      <div class="project-card">
-        <img src="image.jpg" alt="">
-        <h3>Project 4</h3>
-        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quod quas optio expedita asperiores, illo dolorem tempore quam ab, iste sunt praesentium. Hic culpa, itaque in voluptatem nihil ipsam porro dicta?</p>
-      <div class="btn">Review Project</div>
-      </div>
-
-      <div class="project-card">
-        <img src="image.jpg" alt="">
-        <h3>Project 5</h3>
-        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quod quas optio expedita asperiores, illo dolorem tempore quam ab, iste sunt praesentium. Hic culpa, itaque in voluptatem nihil ipsam porro dicta?</p>
-      <div class="btn">Review Project</div>
-      </div>
-
-    
-    </section>
-
-    <section class="contact" id="contact">
-      <h2 class="heading">Contact <span>Me</span></h2>
-      <p class="contact-p">I am excited to collaborate with you on your next project! Whether you need a new website, an application, or assistance with existing projects, I am here to help.
-        Feel free to reach out to discuss your ideas and how we can bring them to life.</p>
-
-      <form action="#">
-        <div class="input-group">
-          <div class="input-box">
-           <input type="text" placeholder="Full Name">
-           <input type="email" placeholder="Email">
-          </div>
-
-          <div class="input-box">
-            <input type="number" placeholder="Phone Number">
-            <input type="text" placeholder="Subject">
-          </div>
-        </div>
-        <div class="input-group-2">
-          <textarea name="" id="" placeholder="Your Message"></textarea>
-          <input type="submit" value="Send Message" class="btn" >
-        </div>
-      </form>
-
-
-    </section>
-
-    <footer class="footer">
+    <footer>
       <div class="social-icons">
-        <a href="#">
-          <i class="bx bxl-github"></i>
-        </a>
-
-        <a href="#">
-          <i class="bx bxl-linkedin-square"></i>
-        </a>
-
-        <a href="#">
-          <i class="bx bxl-instagram-alt"></i>
-        </a>
-
-        <a href="#">
-          <i class="bx bxl-twitter"></i>
-        </a>
-
-        <ul class="list">
-          <li>
-            <a href="#">FAQ</a>
-          </li>
-
-          <li>
-            <a href="#services">Services</a>
-          </li>
-
-          <li>
-            <a href="#about">About</a>
-          </li>
-
-          <li>
-            <a href="#projects">Projects</a>
-          </li>
-
-          <li>
-            <a href="#contact">Contact</a>
-          </li>
-        </ul>
-        <p class="copyright">
-          @Charity Silah | All Rights Reserved  
-        </p>
-
-
+        <a href="#"><i class="bx bxl-github"></i></a>
+        <a href="#"><i class="bx bxl-linkedin-square"></i></a>
+        <a href="#"><i class="bx bxl-instagram-alt"></i></a>
+        <a href="#"><i class="bx bxl-twitter"></i></a>
+      </div>
+      <p>&copy; 2025 Charity Silah | All rights reserved</p>
     </footer>
 
-    <script src="script.js"></script>
+    <script>
+      const menuIcon = document.getElementById("menu-icon");
+      const navbar = document.querySelector(".navbar");
+      menuIcon.onclick = () => {
+        navbar.classList.toggle("active");
+      };
+    </script>
   </body>
 </html>
