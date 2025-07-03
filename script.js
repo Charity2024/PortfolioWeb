@@ -27,19 +27,3 @@ document.getElementById("contact").addEventListener("submit", function (e) {
 });
 
 
-const toggleBtn = document.getElementById('theme-toggle');
-const body = document.body;
-toggleBtn.addEventListener('click', () => {
-  body.classList.toggle('light-theme');
-  if (body.classList.contains('light-theme')) {
-    toggleBtn.innerHTML = '🌞';
-  } else {
-    toggleBtn.innerHTML = '🌙';
-  }
-});
-const savedTheme = localStorage.getItem('theme');
-if (savedTheme) {
-  body.classList.add(savedTheme);
-}
-
-
