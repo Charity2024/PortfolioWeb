@@ -314,6 +314,7 @@ section{
   font-size: 2rem;
   margin: 1rem 0;
   font-weight: 700;
+  padding-bottom: 30px;
 }
 
 .service-info p {
