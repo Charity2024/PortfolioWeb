@@ -536,7 +536,8 @@ textarea:focus {
 
 /* Responsive */
 @media (max-width: 768px) {
-  .home {
+  .home, 
+  .about {
     flex-direction: column-reverse;
     gap: 5rem;
     margin: 5rem 0;
