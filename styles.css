@@ -334,6 +334,7 @@ section {
 .projects {
   background-color: var(--second-bg-color);
   padding: 10rem 15%;
+  align-items: center;
 }
 
 .projects-p {
