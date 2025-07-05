@@ -165,10 +165,7 @@ section {
 }
 
 .home-img img:hover {
-  box-shadow: 
-    0 0 25px var(--main-color),
-    0 0 50px var(--main-color),
-    0 0 100px var(--main-color);
+  box-shadow: none;
 }
 
 .social-icons a{
@@ -548,6 +545,9 @@ textarea:focus {
     text-align: center;
   }
 
+  .home-img img {
+    width: 80vw;
+  }
 
   .home-img img,
   .about-img img {
