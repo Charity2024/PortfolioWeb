@@ -536,7 +536,7 @@ textarea:focus {
 
 /* Responsive */
 @media (max-width: 768px) {
-  .home,
+.home,
   .about {
     flex-direction: column-reverse;
     gap: 5rem;
@@ -551,91 +551,69 @@ textarea:focus {
   .home-img img {
     width: 80vw;
   }
-   .navbar {
+
+  .home-img img,
+  .about-img img {
+    width: 60vw;
+  }
+
+  .navbar {
     display: none;
     flex-direction: column;
-    background: #000;
+    background-color: #000;
     position: absolute;
-    top: 60px;
-    right: 10px;
-    padding: 1rem;
-    border-radius: 10px;
+    top: 100%;
+    right: 0;
+    width: 60%;
+    padding: 2rem;
+    border-radius: 1rem;
+    border: 2px solid var(--main-color);
+    z-index: 1000;
   }
 
   .navbar.active {
     display: flex;
   }
 
+  .navbar a {
+    color: white;
+    margin: 1.5rem 0;
+    font-size: 2rem;
+    border-bottom: none;
+  }
+
   #menu-icon {
     display: block;
+    font-size: 3.5rem;
+    color: var(--main-color);
+    cursor: pointer;
+    z-index: 1001;
   }
 
   .gradient-btn {
     display: none;
   }
-
-  .home-img img,
-  .about-img img {
-    width: 60vw;
-  }
 }
-@media(max-width:1285px){
-  #menu-icon{
-    display: block;
+
+@media (max-width: 1285) {
+  .navbar {
+    display: flex !important;
+    flex-direction: row;
+    position: static;
+    background: transparent;
   }
 
-  .navbar{
-    position: absolute;
-    top: 100%;
-    right: 0;
-    width: 50%;
-    padding: 1rem 3rem;
-    background: rgba(0, 0,0,0.8);
-    border-bottom-left-radius: 2rem;
-    border-left: 2px solid var(--main-color);
-    border-bottom: var(--main-color);
+  #menu-icon {
     display: none;
   }
 
-  .navbar a{
-    display:block;
-    font-size: 2rem;
-    margin: 3rem 0;
-    color: var(--text-color);
+  .navbar a {
+    margin-left: 4rem;
+    font-size: 1.8rem;
+    border-bottom: 3px solid transparent;
   }
 
-  .navbar.active{
-    display: block;
-
+  .gradient-btn {
+    display: inline-block;
   }
-  .gradient-btn{
-    display: none;
-
-  }
- 
-
-
-  .contact form{
-    flex-direction: column;
-  }
-  .contact-p{
-    font-size: 1.4rem;
-    margin: 2rem 0;
-    color: var(--main-color);
-  }
-
-  .header.button.theme-toggle{
-    position: fixed;
-    width: 50px;
-    border-radius: 50%;
-    
-  }
-  .light-mode {
-  background-color: #c66312;
-  color: white;
-}
-
-  
-
-
 }
