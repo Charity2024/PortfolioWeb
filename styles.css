@@ -160,14 +160,14 @@ section {
 .home-img img {
   width: 28vw;
   border-radius: 80%;
-  box-shadow: 0 0 25px var(--main-color);
-  transition: box-shadow 0.4s ease-in-out;
+  box-shadow: 0 0 50px var(--main-color);
+  transition: box-shadow 0.05s ease-in-out;
 }
 
 .home-img img:hover {
-  box-shadow: black 0 0 25px var(--main-color),
-              0 0 50px var(--main-color),
-              0 0 100px var(--main-color);
+  box-shadow: black 0 25px var(--main-color),
+             0 50px var(--main-color),
+             0 0 100px var(--main-color);
   transition: box-shadow 0.4s ease-in-out;
 }
 
