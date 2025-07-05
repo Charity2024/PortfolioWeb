@@ -535,4 +535,19 @@ textarea:focus {
 }
 
 /* Responsive */
-@
+@media (max-width: 768px) {
+  .home {
+    flex-direction: column-reverse;
+    gap: 5rem;
+    margin: 5rem 0;
+  }
+
+  .home-content {
+    align-items: center;
+    text-align: center;
+  }
+
+  .home-img img {
+    width: 80vw;
+  }
+}
