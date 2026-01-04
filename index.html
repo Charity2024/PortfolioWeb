@@ -9,107 +9,139 @@
     <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;800&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="styles.css">
+
+    <script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"></script>
+    <script>
+       (function(){
+          emailjs.init("YOUR_PUBLIC_KEY"); // Replace with your Key
+       })();
+    </script>
 </head>
 <body>
 
     <canvas id="particle-canvas"></canvas>
-
     <div class="cursor-dot"></div>
     <div class="cursor-outline"></div>
 
+    <div id="system-log">STATUS: SYSTEM_IDLE</div>
+
     <header class="header">
-        <a href="#home" class="logo">CS<span>.</span></a>
-        <nav class="navbar">
-            <a href="#home">Home</a>
-            <a href="#services">Services</a>
-            <a href="#projects">Work</a>
-            <div class="magnetic-wrap">
-                <a href="#contact" class="btn-premium magnetic-item">Hire Me</a>
+        <div class="scroll-progress-bar"></div>
+        <div class="header-container">
+            <a href="#home" class="logo magnetic-item">
+                <span class="logo-bracket">[</span>CS<span class="amber-glow">.</span><span class="logo-bracket">]</span>
+            </a>
+
+            <div class="header-status-terminal">
+                <span class="terminal-label">NODE:</span>
+                <span class="terminal-value" id="node-display">01_CORE_NAV</span>
+                <span class="terminal-label">VAULT_INDEX:</span>
+                <span id="vault-counter" class="terminal-value">00</span>
             </div>
-        </nav>
+
+            <nav class="navbar">
+                <div class="nav-links">
+                    <a href="#home" class="nav-item">HOME</a>
+                    <a href="#services" class="nav-item">SERVICES</a>
+                    <a href="#projects" class="nav-item">WORK</a>
+                </div>
+                <a href="#contact" class="btn-premium">INITIALIZE PROJECT</a>
+            </nav>
+        </div>
     </header>
 
     <section class="home" id="home">
         <div class="kinetic-text">ARCHITECT • ENGINEER • VISIONARY</div>
-
         <div class="home-content" data-aos="zoom-out-up">
             <div class="hero-badge">
                 <span class="pulse-dot"></span> Available for 2026 Projects
             </div>
-            
-            <h1 class="glitch-text">
-                Designing <br>
-                <span class="amber-glow">Digital Realities.</span>
-            </h1>
-
+            <h1>Designing <br> <span class="amber-glow">Digital Realities.</span></h1>
             <div class="hero-description">
-                <p>I am Charity Silah, a <span id="typed"></span> crafting high-end digital experiences that prioritize user psychology and performance.</p>
+                <p>I am Charity Silah, a <span id="typed"></span> crafting high-end digital experiences.</p>
             </div>
-
             <div class="hero-cta-group">
-                <a href="#projects" class="btn-premium main-cta">
-                    <span>Discover the Vault</span>
-                    <i class='bx bx-right-arrow-alt'></i>
-                </a>
-                <div class="social-icons">
-                    <a href="https://github.com/Charity2024" class="magnetic-item"><i class='bx bxl-github'></i></a>
-                    <a href="https://linkedin.com/in/charitysilah" class="magnetic-item"><i class='bx bxl-linkedin-square'></i></a>
-                </div>
+                <a href="#projects" class="btn-premium">Discover Vault <i class='bx bx-right-arrow-alt'></i></a>
+                <button class="btn-premium" onclick="initializeDownload()" id="cv-btn">RETRIEVE_CV.EXE</button>
             </div>
-        </div>
-
-        <div class="hero-decoration">
-            <div class="glass-tag tech-1">React / Next.js</div>
-            <div class="glass-tag tech-2">Django Expert</div>
-            <div class="glass-tag tech-3">UI Psychology</div>
-        </div>
-
-        <div class="scroll-down">
-            <div class="mouse"></div>
-            <span>SCROLL TO EXPLORE</span>
         </div>
     </section>
 
     <section id="services">
-        <h2 class="section-title" data-aos="fade-right">Core <span class="amber-glow">Expertise</span></h2>
+        <h2 class="section-title" style="padding: 0 10%; margin-bottom: 2rem; font-size: 2.5rem;">Core <span class="amber-glow">Expertise</span></h2>
         <div class="bento-grid">
             <div class="bento-item item-large" data-aos="fade-up">
-                <i class='bx bx-code-block'></i>
+                <i class='bx bx-code-block' style="font-size: 2rem; color: var(--main-color);"></i>
                 <h3>Full-Stack Engineering</h3>
-                <p>End-to-end development using React, Django, and modern cloud infrastructure.</p>
+                <p>End-to-end development using React and Django.</p>
             </div>
-            <div class="bento-item item-medium" data-aos="fade-up" data-aos-delay="100">
-                <i class='bx bx-layer'></i>
+            <div class="bento-item item-medium" data-aos="fade-up">
                 <h3>UI/UX Architecture</h3>
-                <p>Design systems built on cognitive psychology to reduce user friction.</p>
+                <p>Design systems built on psychology.</p>
             </div>
-            <div class="bento-item" data-aos="fade-up" data-aos-delay="200">
-                <i class='bx bx-data'></i>
-                <h3>Backend</h3>
-                <p>Python/Django Expert</p>
+            <div class="bento-item" data-aos="fade-up"><h3>Backend</h3><p>Python Specialist</p></div>
+            <div class="bento-item" data-aos="fade-up"><h3>Mobile</h3><p>Responsive Systems</p></div>
+        </div>
+    </section>
+
+    <section id="projects">
+        <h2 class="section-title" style="padding: 0 10%; margin-bottom: 2rem; font-size: 2.5rem;">Project <span class="amber-glow">Vault</span></h2>
+        <div class="bento-grid">
+            <div class="bento-item item-large project-card" data-log="FINTECH_MODEL_01">
+                <div class="project-overlay">
+                    <h3>Neuro-Trading</h3>
+                    <p>AI Predictive Dashboard</p>
+                </div>
             </div>
-            <div class="bento-item" data-aos="fade-up" data-aos-delay="300">
-                <i class='bx bx-mobile-alt'></i>
-                <h3>Mobile</h3>
-                <p>Responsive Architecture</p>
+            <div class="bento-item item-medium project-card" data-log="E-COMM_3D_ENV">
+                <div class="project-overlay">
+                    <h3>Aura Wear</h3>
+                    <p>3D Immersive Experience</p>
+                </div>
             </div>
         </div>
     </section>
 
     <section id="contact">
+        <div class="contact-header" data-aos="fade-up">
+            <h2 class="section-title">Initialize <span class="amber-glow">Connection</span></h2>
+            <p class="system-subtitle">PROTOCOL: SECURE_ENCRYPTED_CHANNEL</p>
+        </div>
         <div class="contact-container" data-aos="zoom-in">
+            <div class="form-progress">
+                <div class="progress-segment active"></div>
+                <div class="progress-segment"></div>
+                <div class="progress-segment"></div>
+            </div>
             <form id="interactive-form">
                 <div class="form-step active" id="step-1">
-                    <span class="form-label">01 — IDENTITY</span>
-                    <input type="text" class="form-input" placeholder="What is your name?" id="name-input" required>
-                    <button type="button" class="btn-premium" onclick="nextStep(2)">Next Step</button>
+                    <span class="form-label">01 // SOURCE_IDENTITY</span>
+                    <div class="input-wrapper">
+                        <input type="text" name="user_name" class="form-input" placeholder="NAME" required>
+                        <div class="input-scanner"></div>
+                    </div>
+                    <button type="button" class="btn-premium" onclick="nextStep(2)">CONTINUE</button>
                 </div>
                 <div class="form-step" id="step-2">
-                    <span class="form-label">02 — COMMUNICATION</span>
-                    <input type="email" class="form-input" placeholder="Your email address?" id="email-input" required>
-                    <div class="form-nav" style="display:flex; gap: 20px; align-items: center;">
-                        <button type="button" onclick="nextStep(1)" class="back-btn" style="background:none; border:none; color:#666; cursor:pointer;">Back</button>
-                        <button type="submit" class="btn-premium">Initialize Contact</button>
+                    <span class="form-label">02 // DATA_ENDPOINT</span>
+                    <div class="input-wrapper">
+                        <input type="email" name="user_email" class="form-input" placeholder="EMAIL" required>
+                        <div class="input-scanner"></div>
+                    </div>
+                    <div class="form-nav">
+                        <button type="button" onclick="nextStep(1)" class="back-btn">RETURN</button>
+                        <button type="button" class="btn-premium" onclick="nextStep(3)">CONTINUE</button>
+                    </div>
+                </div>
+                <div class="form-step" id="step-3">
+                    <span class="form-label">03 // MISSION_BRIEF</span>
+                    <div class="input-wrapper">
+                        <textarea name="message" class="form-input" placeholder="OBJECTIVES..." rows="4" required></textarea>
+                        <div class="input-scanner"></div>
+                    </div>
+                    <div class="form-nav">
+                        <button type="button" onclick="nextStep(2)" class="back-btn">RETURN</button>
+                        <button type="submit" class="btn-premium" id="submit-btn">SEND_PACKET</button>
                     </div>
                 </div>
             </form>
@@ -117,57 +149,9 @@
     </section>
 
     <footer class="footer">
-        <div class="footer-marquee">
-            <div class="marquee-inner">
-                <span>GET IN TOUCH • DESIGNING FOR TOMORROW • BUILD THE FUTURE • </span>
-                <span>GET IN TOUCH • DESIGNING FOR TOMORROW • BUILD THE FUTURE • </span>
-            </div>
-        </div>
-
-        <div class="footer-main-content">
-            <div class="footer-cta-wrap" data-aos="fade-up">
-                <div class="cta-line top-line">
-                    <span class="outline-text">ESTABLISHED</span>
-                    <span class="filled-text">2026</span>
-                </div>
-                
-                <div class="cta-line main-cta">
-                    <span class="filled-text big-type" data-decode data-value="LET'S BUILD">LET'S BUILD</span>
-                </div>
-                
-                <div class="cta-line secondary-cta">
-                    <span class="outline-text big-type">THE</span>
-                    <span class="filled-text big-type amber-glow" data-decode data-value="FUTURE">FUTURE</span>
-                    <div class="footer-orb"></div>
-                </div>
-            </div>
-
-            <div class="footer-grid">
-                <a href="mailto:hello@charitysilah.com" class="grid-item magnetic-item">
-                    <span class="grid-label">ENQUIRIES</span>
-                    <span class="grid-value">EMAIL ME <i class='bx bx-right-top-arrow-circle'></i></span>
-                </a>
-                <a href="https://linkedin.com/in/charitysilah" class="grid-item magnetic-item">
-                    <span class="grid-label">NETWORK</span>
-                    <span class="grid-value">LINKEDIN <i class='bx bxl-linkedin'></i></span>
-                </a>
-                <a href="https://github.com/Charity2024" class="grid-item magnetic-item">
-                    <span class="grid-label">REPOSITORIES</span>
-                    <span class="grid-value">GITHUB <i class='bx bxl-github'></i></span>
-                </a>
-            </div>
-        </div>
-        
         <div class="footer-bottom">
-            <div class="bot-left">&copy; 2026 CHARITY SILAH</div>
-            <div class="bot-center">
-                <span class="system-tag">SYSTEM: SECURE</span>
-                <span class="system-tag">LOCAL TIME: <span id="local-time">--:--</span></span>
-            </div>
-            <div class="status-indicator-wrap">
-                <span class="pulse-dot"></span>
-                <span class="status">STATUS: ONLINE</span>
-            </div>
+            <div>&copy; 2026 CHARITY SILAH</div>
+            <div>STATUS: ONLINE | LOCAL TIME: <span id="local-time">--:--</span></div>
         </div>
     </footer>
 
@@ -177,103 +161,87 @@
     <script>
         AOS.init({ duration: 1000, once: true });
 
-        // 1. Typed.js
         new Typed('#typed', {
             strings: ['Digital Architect', 'Full-Stack Engineer', 'UI/UX Lead'],
             typeSpeed: 60, backSpeed: 40, loop: true
         });
 
-        // 2. Custom Snapping Cursor
+        // Cursor Logic
         const dot = document.querySelector('.cursor-dot');
         const outline = document.querySelector('.cursor-outline');
-        
         window.addEventListener('mousemove', (e) => {
             dot.style.left = `${e.clientX}px`;
             dot.style.top = `${e.clientY}px`;
             
-            const target = e.target.closest('a, button, .magnetic-item, .grid-item');
+            const target = e.target.closest('a, button, input, textarea, .project-card');
             if (target) {
                 outline.classList.add('cursor-active');
                 const rect = target.getBoundingClientRect();
                 outline.style.left = `${rect.left + rect.width / 2}px`;
                 outline.style.top = `${rect.top + rect.height / 2}px`;
-                outline.style.width = `${rect.width + 15}px`;
-                outline.style.height = `${rect.height + 15}px`;
-                outline.style.borderRadius = '12px';
+                outline.style.width = `${rect.width + 10}px`;
+                outline.style.height = `${rect.height + 10}px`;
+                outline.style.borderRadius = '8px';
             } else {
                 outline.classList.remove('cursor-active');
                 outline.style.left = `${e.clientX}px`;
                 outline.style.top = `${e.clientY}px`;
-                outline.style.width = '40px';
-                outline.style.height = '40px';
-                outline.style.borderRadius = '50%';
+                outline.style.width = '40px'; outline.style.height = '40px'; outline.style.borderRadius = '50%';
             }
         });
 
-        // 3. Neural Background
+        // Form Logic
+        function nextStep(step) {
+            document.querySelectorAll('.form-step').forEach(s => s.classList.remove('active'));
+            document.getElementById(`step-${step}`).classList.add('active');
+            
+            document.querySelectorAll('.progress-segment').forEach((seg, i) => {
+                i < step ? seg.classList.add('active') : seg.classList.remove('active');
+            });
+        }
+
+        // CV Download
+        function initializeDownload() {
+            const btn = document.getElementById('cv-btn');
+            let progress = 0;
+            const interval = setInterval(() => {
+                progress += 5;
+                btn.innerText = `DECRYPTING_${progress}%`;
+                if (progress >= 100) {
+                    clearInterval(interval);
+                    btn.innerText = "COMPLETE";
+                    setTimeout(() => btn.innerText = "RETRIEVE_CV.EXE", 2000);
+                }
+            }, 50);
+        }
+
+        // Particle Engine
         const canvas = document.getElementById('particle-canvas');
         const ctx = canvas.getContext('2d');
         let particles = [];
-        function initParticles() {
-            canvas.width = window.innerWidth;
-            canvas.height = window.innerHeight;
-            particles = [];
-            for(let i=0; i<80; i++) {
-                particles.push({
-                    x: Math.random() * canvas.width,
-                    y: Math.random() * canvas.height,
-                    vx: (Math.random() - 0.5) * 0.4,
-                    vy: (Math.random() - 0.5) * 0.4
-                });
-            }
+        function init() {
+            canvas.width = window.innerWidth; canvas.height = window.innerHeight;
+            particles = Array.from({length: 50}, () => ({
+                x: Math.random() * canvas.width, y: Math.random() * canvas.height,
+                vx: Math.random() - 0.5, vy: Math.random() - 0.5
+            }));
         }
         function draw() {
             ctx.clearRect(0,0,canvas.width, canvas.height);
-            ctx.fillStyle = "rgba(251, 191, 36, 0.4)";
-            ctx.strokeStyle = "rgba(251, 191, 36, 0.05)";
-            particles.forEach((p, i) => {
+            ctx.fillStyle = "rgba(251, 191, 36, 0.2)";
+            particles.forEach(p => {
                 p.x += p.vx; p.y += p.vy;
-                if(p.x < 0 || p.x > canvas.width) p.vx *= -1;
-                if(p.y < 0 || p.y > canvas.height) p.vy *= -1;
-                ctx.beginPath(); ctx.arc(p.x, p.y, 1.2, 0, Math.PI*2); ctx.fill();
-                for(let j=i+1; j<particles.length; j++) {
-                    let p2 = particles[j];
-                    let d = Math.hypot(p.x - p2.x, p.y - p2.y);
-                    if(d < 150) { ctx.beginPath(); ctx.moveTo(p.x, p.y); ctx.lineTo(p2.x, p2.y); ctx.stroke(); }
-                }
+                if(p.x<0 || p.x>canvas.width) p.vx*=-1;
+                if(p.y<0 || p.y>canvas.height) p.vy*=-1;
+                ctx.beginPath(); ctx.arc(p.x, p.y, 1, 0, Math.PI*2); ctx.fill();
             });
             requestAnimationFrame(draw);
         }
-        initParticles(); draw();
-        window.addEventListener('resize', initParticles);
+        init(); draw();
 
-        // 4. Scramble Effect (Works on Hover)
-        const letters = "ABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789";
-        document.querySelectorAll("[data-decode]").forEach(el => {
-            el.addEventListener('mouseenter', event => {
-                let iter = 0;
-                const val = event.target.dataset.value;
-                const interval = setInterval(() => {
-                    event.target.innerText = val.split("").map((l, i) => {
-                        if(i < iter) return val[i];
-                        return letters[Math.floor(Math.random()*36)];
-                    }).join("");
-                    if(iter >= val.length) clearInterval(interval);
-                    iter += 1/3;
-                }, 40);
-            });
-        });
-
-        // 5. Form Logic
-        function nextStep(s) {
-            document.querySelectorAll('.form-step').forEach(e => e.classList.remove('active'));
-            document.getElementById(`step-${s}`).classList.add('active');
-        }
-
-        // 6. Real-time Clock
+        // Local Time
         setInterval(() => {
-            const timeEl = document.getElementById('local-time');
-            if(timeEl) timeEl.innerText = new Date().toLocaleTimeString([], {hour: '2-digit', minute:'2-digit'});
+            document.getElementById('local-time').innerText = new Date().toLocaleTimeString();
         }, 1000);
     </script>
 </body>
