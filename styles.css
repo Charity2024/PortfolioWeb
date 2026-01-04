@@ -12,7 +12,6 @@
 
 * { margin: 0; padding: 0; box-sizing: border-box; }
 
-/* Custom Cursor - Only on desktop */
 @media (hover: hover) {
     * { cursor: none !important; }
 }
@@ -55,6 +54,7 @@ header {
     position: absolute; background: rgba(255, 255, 255, 0.02); backdrop-filter: blur(20px);
     border: 1px solid var(--glass-border); border-radius: 24px; padding: 25px;
     z-index: 1; box-shadow: 0 20px 40px rgba(0,0,0,0.4); 
+    transition: transform 0.1s ease-out;
 }
 #card-1 { top: 10%; left: 5%; width: 220px; }
 #card-2 { top: 12%; right: 5%; width: 250px; }
@@ -114,7 +114,6 @@ section { padding: 80px 10%; }
     display: flex; align-items: center; justify-content: center; font-weight: 900;
     cursor: pointer; transition: 0.4s;
 }
-.btn-launch:hover { transform: scale(1.05); box-shadow: 0 0 30px rgba(251, 191, 36, 0.3); }
 
 .system-status-bar {
     margin-top: 80px; padding-top: 30px; border-top: 1px solid var(--glass-border);
@@ -122,16 +121,20 @@ section { padding: 80px 10%; }
     font-family: 'JetBrains Mono'; font-size: 10px; color: #666;
 }
 
-/* THE MISSING SOCIAL STYLES */
 .social-node {
     padding: 8px 20px; border: 1px solid var(--glass-border); border-radius: 50px;
-    color: #fff; text-decoration: none; transition: 0.4s;
+    color: #fff; text-decoration: none; transition: 0.4s; display: inline-block;
 }
 .social-node:hover { background: var(--accent); color: #000; }
 
 /* --- Mobile Responsiveness --- */
 @media (max-width: 1024px) {
-    .orbital-card { display: none; } /* Hide cards on mobile to prevent overlap */
+    .orbital-card { transform: scale(0.6) !important; padding: 15px; }
+    #card-1 { top: 2%; left: 2%; width: 180px; }
+    #card-2 { top: 4%; right: 2%; width: 180px; }
+    #card-3 { bottom: 4%; left: 2%; width: 160px; }
+    #card-4 { bottom: 2%; right: 2%; width: 160px; }
+    
     .vault-container { grid-template-columns: 1fr; }
     .footer-glass { padding: 60px 40px; border-radius: 40px; }
 }
@@ -141,6 +144,12 @@ section { padding: 80px 10%; }
     .nav-pill { gap: 10px; padding: 8px 15px; }
     .dossier-card { flex-direction: column; text-align: center; }
     .system-status-bar { flex-direction: column; gap: 20px; text-align: center; }
+    
+    .orbital-card { transform: scale(0.4) !important; opacity: 0.5; }
+    #card-1 { top: -2%; left: -5%; }
+    #card-2 { top: 0%; right: -5%; }
+    #card-3 { bottom: 0%; left: -5%; }
+    #card-4 { bottom: -2%; right: -5%; }
 }
 
 .reveal { opacity: 0; transform: translateY(40px); transition: 0.8s ease-out; }
