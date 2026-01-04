@@ -3,246 +3,208 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Charity Silah | Digital Architect</title>
-    
-    <link href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css" rel="stylesheet">
-    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;800&display=swap" rel="stylesheet">
+    <title>Charity Silah </title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700;900&family=JetBrains+Mono:wght@400&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="styles.css">
-
-    <script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"></script>
-    <script>
-       (function(){
-          emailjs.init("YOUR_PUBLIC_KEY"); // Replace with your Key
-       })();
-    </script>
 </head>
 <body>
 
-    <canvas id="particle-canvas"></canvas>
+    <canvas id="particle-canvas" style="position:fixed; top:0; left:0; z-index:-1; opacity:0.3;"></canvas>
     <div class="cursor-dot"></div>
     <div class="cursor-outline"></div>
 
-    <div id="system-log">STATUS: SYSTEM_IDLE</div>
-
-    <header class="header">
-        <div class="scroll-progress-bar"></div>
-        <div class="header-container">
-            <a href="#home" class="logo magnetic-item">
-                <span class="logo-bracket">[</span>CS<span class="amber-glow">.</span><span class="logo-bracket">]</span>
-            </a>
-
-            <div class="header-status-terminal">
-                <span class="terminal-label">NODE:</span>
-                <span class="terminal-value" id="node-display">01_CORE_NAV</span>
-                <span class="terminal-label">VAULT_INDEX:</span>
-                <span id="vault-counter" class="terminal-value">00</span>
-            </div>
-
-            <nav class="navbar">
-                <div class="nav-links">
-                    <a href="#home" class="nav-item">HOME</a>
-                    <a href="#services" class="nav-item">SERVICES</a>
-                    <a href="#projects" class="nav-item">WORK</a>
-                </div>
-                <a href="#contact" class="btn-premium">INITIALIZE PROJECT</a>
-            </nav>
-        </div>
+    <header>
+        <a href="#" class="logo-container">
+            <div class="logo-icon"><span>C</span></div>
+            <div class="logo-text">SILAH</div>
+        </a>
+        <nav class="nav-pill">
+            <a href="#home">01_ROOT</a>
+            <a href="#about">02_ABOUT</a>
+            <a href="#vault">03_VAULT</a>
+            <a href="#contact">04_CONNECT</a>
+        </nav>
     </header>
 
     <section class="home" id="home">
-        <div class="kinetic-text">ARCHITECT • ENGINEER • VISIONARY</div>
-        <div class="home-content" data-aos="zoom-out-up">
-            <div class="hero-badge">
-                <span class="pulse-dot"></span> Available for 2026 Projects
+        <div class="orbital-card" id="card-1">
+            <span style="font-family:'JetBrains Mono'; font-size:10px; color:var(--accent);">// ARCH_V2.0</span>
+            <p style="font-size:13px; margin-top:10px; font-weight:700;">React • Django</p>
+        </div>
+        <div class="orbital-card" id="card-2">
+            <span style="font-family:'JetBrains Mono'; font-size:10px; color:var(--accent);">// SERVER_SIDE</span>
+            <p style="font-size:13px; margin-top:10px; font-weight:700;">Python Architect</p>
+        </div>
+        <div class="orbital-card" id="card-3">
+            <p style="font-size:12px; opacity:0.7;">Astronomy-driven design logic.</p>
+        </div>
+        <div class="orbital-card" id="card-4">
+            <span style="font-family:'JetBrains Mono'; font-size:10px; color:var(--accent);">// SYSTEM_LOG</span>
+            <p style="font-size:11px; margin-top:8px; line-height:1.5; opacity:0.6;">> Status: Online</p>
+        </div>
+
+        <div class="hero-content">
+            <h1 class="cryptic-title" data-value="ARCHITECT">ARCHITECT</h1>
+            <div style="min-height:30px;">
+                <span id="typed-hero" style="font-family:'JetBrains Mono'; color:var(--accent); letter-spacing:2px;"></span>
             </div>
-            <h1>Designing <br> <span class="amber-glow">Digital Realities.</span></h1>
-            <div class="hero-description">
-                <p>I am Charity Silah, a <span id="typed"></span> crafting high-end digital experiences.</p>
-            </div>
-            <div class="hero-cta-group">
-                <a href="#projects" class="btn-premium">Discover Vault <i class='bx bx-right-arrow-alt'></i></a>
-                <button class="btn-premium" onclick="initializeDownload()" id="cv-btn">RETRIEVE_CV.EXE</button>
-            </div>
+            <p style="max-width:550px; margin: 40px auto; color:var(--text-secondary); line-height:1.8;">
+                Designing robust digital ecosystems with technical precision. Explore a curated selection of live deployments below.
+            </p>
+            <button style="background:var(--accent); color:#000; border:none; padding:18px 45px; border-radius:12px; font-weight:900; letter-spacing:1px; cursor:pointer;" onclick="location.href='#vault'">ENTER_VAULT</button>
         </div>
     </section>
 
-    <section id="services">
-        <h2 class="section-title" style="padding: 0 10%; margin-bottom: 2rem; font-size: 2.5rem;">Core <span class="amber-glow">Expertise</span></h2>
-        <div class="bento-grid">
-            <div class="bento-item item-large" data-aos="fade-up">
-                <i class='bx bx-code-block' style="font-size: 2rem; color: var(--main-color);"></i>
-                <h3>Full-Stack Engineering</h3>
-                <p>End-to-end development using React and Django.</p>
+    <section id="about" class="dossier-section reveal">
+        <div class="dossier-card">
+            <div class="profile-radar">
+                <div class="radar-ring"></div>
+                <img src="./me.webp" alt="Charity Silah">
             </div>
-            <div class="bento-item item-medium" data-aos="fade-up">
-                <h3>UI/UX Architecture</h3>
-                <p>Design systems built on psychology.</p>
-            </div>
-            <div class="bento-item" data-aos="fade-up"><h3>Backend</h3><p>Python Specialist</p></div>
-            <div class="bento-item" data-aos="fade-up"><h3>Mobile</h3><p>Responsive Systems</p></div>
-        </div>
-    </section>
-
-    <section id="projects">
-        <h2 class="section-title" style="padding: 0 10%; margin-bottom: 2rem; font-size: 2.5rem;">Project <span class="amber-glow">Vault</span></h2>
-        <div class="bento-grid">
-            <div class="bento-item item-large project-card" data-log="FINTECH_MODEL_01">
-                <div class="project-overlay">
-                    <h3>Neuro-Trading</h3>
-                    <p>AI Predictive Dashboard</p>
-                </div>
-            </div>
-            <div class="bento-item item-medium project-card" data-log="E-COMM_3D_ENV">
-                <div class="project-overlay">
-                    <h3>Aura Wear</h3>
-                    <p>3D Immersive Experience</p>
+            <div class="bio-text">
+                <h4>[ OPERATOR_BIO ]</h4>
+                <p>
+                    Engineering student by training, architect by trade. I am driven by the intersection of <strong>astronomy</strong> and <strong>software engineering</strong>,where cosmic complexity meets clean code. My passion lies in solving multi-dimensional problems and building systems that are as scalable as the stars.
+                </p>
+                <div style="margin-top:15px; font-family:'JetBrains Mono'; font-size:11px; color:var(--accent);">
+                    CURRENT_MISSION: Solving the digital unknown.
                 </div>
             </div>
         </div>
     </section>
 
-    <section id="contact">
-        <div class="contact-header" data-aos="fade-up">
-            <h2 class="section-title">Initialize <span class="amber-glow">Connection</span></h2>
-            <p class="system-subtitle">PROTOCOL: SECURE_ENCRYPTED_CHANNEL</p>
+    <section id="vault">
+        <div style="margin-bottom: 60px;">
+            <span style="font-family:'JetBrains Mono'; color:var(--accent); font-size:12px;">[ FEATURED_SYSTEMS ]</span>
+            <h2 class="reveal" style="font-size:4.5rem; font-weight:900; line-height:0.9; margin-top:10px;">The <span style="color:var(--accent);">Vault.</span></h2>
         </div>
-        <div class="contact-container" data-aos="zoom-in">
-            <div class="form-progress">
-                <div class="progress-segment active"></div>
-                <div class="progress-segment"></div>
-                <div class="progress-segment"></div>
+        
+        <div class="vault-container">
+            <div class="project-card reveal">
+                <div class="status-indicator"><div class="dot"></div> ONLINE</div>
+                <div class="project-img-container"><img src="https://images.unsplash.com/photo-1467232004584-a241de8bcf5d?auto=format&fit=crop&q=80&w=800" alt="Architect Portfolio"></div>
+                <span style="font-family:'JetBrains Mono'; font-size:10px; color:var(--accent);">SYSTEM_001</span>
+                <h3>Digital Architect v2</h3>
+                <p style="color:var(--text-secondary); margin-bottom:20px; font-size:0.95rem;">My personal engineering hub. Built with kinetic typography, particle physics, and advanced glassmorphism.</p>
+                <a href="#" style="color:var(--accent); text-decoration:none; font-weight:900; font-family:'JetBrains Mono'; font-size:11px;">SYSTEM_STABLE &nearr;</a>
             </div>
-            <form id="interactive-form">
-                <div class="form-step active" id="step-1">
-                    <span class="form-label">01 // SOURCE_IDENTITY</span>
-                    <div class="input-wrapper">
-                        <input type="text" name="user_name" class="form-input" placeholder="NAME" required>
-                        <div class="input-scanner"></div>
-                    </div>
-                    <button type="button" class="btn-premium" onclick="nextStep(2)">CONTINUE</button>
-                </div>
-                <div class="form-step" id="step-2">
-                    <span class="form-label">02 // DATA_ENDPOINT</span>
-                    <div class="input-wrapper">
-                        <input type="email" name="user_email" class="form-input" placeholder="EMAIL" required>
-                        <div class="input-scanner"></div>
-                    </div>
-                    <div class="form-nav">
-                        <button type="button" onclick="nextStep(1)" class="back-btn">RETURN</button>
-                        <button type="button" class="btn-premium" onclick="nextStep(3)">CONTINUE</button>
-                    </div>
-                </div>
-                <div class="form-step" id="step-3">
-                    <span class="form-label">03 // MISSION_BRIEF</span>
-                    <div class="input-wrapper">
-                        <textarea name="message" class="form-input" placeholder="OBJECTIVES..." rows="4" required></textarea>
-                        <div class="input-scanner"></div>
-                    </div>
-                    <div class="form-nav">
-                        <button type="button" onclick="nextStep(2)" class="back-btn">RETURN</button>
-                        <button type="submit" class="btn-premium" id="submit-btn">SEND_PACKET</button>
-                    </div>
-                </div>
-            </form>
+
+            <div class="project-card reveal">
+                <div class="status-indicator"><div class="dot"></div> LIVE</div>
+                <div class="project-img-container"><img src="./nyota.webp" alt="Nyota Spaceworks"></div>
+                <span style="font-family:'JetBrains Mono'; font-size:10px; color:var(--accent);">SYSTEM_002</span>
+                <h3>Nyota Spaceworks</h3>
+                <p style="color:var(--text-secondary); margin-bottom:20px; font-size:0.95rem;">A sleek, motion-heavy landing page for an African space-tech startup. Astronomy meets technical design.</p>
+                <a href="https://nyota-spwks.netlify.app/" target="_blank" style="color:var(--accent); text-decoration:none; font-weight:900; font-family:'JetBrains Mono'; font-size:11px;">EXTERNAL_LINK &nearr;</a>
+            </div>
+
+            <div class="project-card reveal">
+                <div class="status-indicator"><div class="dot"></div> LIVE</div>
+                <div class="project-img-container"><img src="https://images.unsplash.com/photo-1590602847861-f357a9332bbc?auto=format&fit=crop&q=80&w=800" alt="Zion Voices"></div>
+                <span style="font-family:'JetBrains Mono'; font-size:10px; color:var(--accent);">SYSTEM_003</span>
+                <h3>Zion Voices</h3>
+                <p style="color:var(--text-secondary); margin-bottom:20px; font-size:0.95rem;">A sonic portfolio for a premier voice-over artist. Focused on audio-visual clarity and brand narrative.</p>
+                <a href="https://zionvoices.netlify.app/" target="_blank" style="color:var(--accent); text-decoration:none; font-weight:900; font-family:'JetBrains Mono'; font-size:11px;">EXTERNAL_LINK &nearr;</a>
+            </div>
+        </div>
+
+        <div class="reveal" style="margin-top:50px; text-align:center;">
+            <p style="font-family:'JetBrains Mono'; color:var(--text-secondary); font-size:12px;">
+                > Accessing deep archive... <span style="color:var(--accent);">+12 MORE PROJECTS</span> NOT LISTED.
+            </p>
+            <div style="width:1px; height:80px; background:linear-gradient(to bottom, var(--accent), transparent); margin:20px auto;"></div>
         </div>
     </section>
 
-    <footer class="footer">
-        <div class="footer-bottom">
-            <div>&copy; 2026 CHARITY SILAH</div>
-            <div>STATUS: ONLINE | LOCAL TIME: <span id="local-time">--:--</span></div>
+    <footer id="contact" style="padding-top:100px;">
+        <div class="footer-glass reveal">
+            <div style="display:flex; justify-content:space-between; align-items:center; flex-wrap:wrap; gap:50px;">
+                <div style="max-width:500px;">
+                    <h2 style="font-size:4.5rem; font-weight:900; line-height:0.8; margin-bottom:30px;">Initialize <br><span style="color:var(--accent);">Contact.</span></h2>
+                    <p style="color:var(--text-secondary); font-size:1.2rem;">Ready for high-stakes engineering. The terminal is open.</p>
+                </div>
+                <div class="btn-launch" onclick="location.href='mailto:your@email.com'">START <span>&nearr;</span></div>
+            </div>
+
+            <div class="system-status-bar">
+                <div style="display:flex; gap:30px;">
+                    <div>CHARITY SILAH © 2026</div>
+                    <div style="color:var(--accent);">STATUS: <span id="sys-clock">00:00:00</span></div>
+                    <div>POWERED BY NYOTA_LAB</div>
+                </div>
+                <div style="display:flex; gap:15px; align-items:center;">
+                    <div style="font-size:9px;">PING: <span id="latency" style="color:var(--status-green);">24ms</span></div>
+                    <a href="https://github.com/Charity2024" target="_blank" class="social-node">GITHUB</a>
+                    <a href="https://linkedin.com/in/charitysilah" target="_blank" class="social-node">LINKEDIN</a>
+                </div>
+            </div>
         </div>
     </footer>
 
-    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
     <script src="https://unpkg.com/typed.js@2.1.0/dist/typed.umd.js"></script>
-    
     <script>
-        AOS.init({ duration: 1000, once: true });
-
-        new Typed('#typed', {
-            strings: ['Digital Architect', 'Full-Stack Engineer', 'UI/UX Lead'],
-            typeSpeed: 60, backSpeed: 40, loop: true
-        });
-
-        // Cursor Logic
-        const dot = document.querySelector('.cursor-dot');
-        const outline = document.querySelector('.cursor-outline');
-        window.addEventListener('mousemove', (e) => {
-            dot.style.left = `${e.clientX}px`;
-            dot.style.top = `${e.clientY}px`;
-            
-            const target = e.target.closest('a, button, input, textarea, .project-card');
-            if (target) {
-                outline.classList.add('cursor-active');
-                const rect = target.getBoundingClientRect();
-                outline.style.left = `${rect.left + rect.width / 2}px`;
-                outline.style.top = `${rect.top + rect.height / 2}px`;
-                outline.style.width = `${rect.width + 10}px`;
-                outline.style.height = `${rect.height + 10}px`;
-                outline.style.borderRadius = '8px';
-            } else {
-                outline.classList.remove('cursor-active');
-                outline.style.left = `${e.clientX}px`;
-                outline.style.top = `${e.clientY}px`;
-                outline.style.width = '40px'; outline.style.height = '40px'; outline.style.borderRadius = '50%';
-            }
-        });
-
-        // Form Logic
-        function nextStep(step) {
-            document.querySelectorAll('.form-step').forEach(s => s.classList.remove('active'));
-            document.getElementById(`step-${step}`).classList.add('active');
-            
-            document.querySelectorAll('.progress-segment').forEach((seg, i) => {
-                i < step ? seg.classList.add('active') : seg.classList.remove('active');
-            });
-        }
-
-        // CV Download
-        function initializeDownload() {
-            const btn = document.getElementById('cv-btn');
-            let progress = 0;
+        const letters = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
+        const title = document.querySelector(".cryptic-title");
+        
+        function runScramble() {
+            let iteration = 0;
             const interval = setInterval(() => {
-                progress += 5;
-                btn.innerText = `DECRYPTING_${progress}%`;
-                if (progress >= 100) {
-                    clearInterval(interval);
-                    btn.innerText = "COMPLETE";
-                    setTimeout(() => btn.innerText = "RETRIEVE_CV.EXE", 2000);
-                }
-            }, 50);
+                title.innerText = title.innerText.split("").map((l, i) => {
+                    if(i < iteration) return title.dataset.value[i];
+                    return letters[Math.floor(Math.random() * 26)];
+                }).join("");
+                if(iteration >= title.dataset.value.length) clearInterval(interval);
+                iteration += 1 / 3;
+            }, 30);
         }
+        runScramble();
+        title.onmouseover = runScramble;
 
-        // Particle Engine
+        new Typed('#typed-hero', {
+            strings: ['FULL-STACK ARCHITECT', 'PYTHON & DJANGO', 'UI ENGINEER'],
+            typeSpeed: 50, backSpeed: 30, loop: true
+        });
+
+        setInterval(() => {
+            const now = new Date();
+            document.getElementById('sys-clock').innerText = now.toLocaleTimeString('en-GB', { hour12: false });
+            const ping = Math.floor(Math.random() * (45 - 20) + 20);
+            document.getElementById('latency').innerText = `${ping}ms`;
+        }, 1000);
+
+        document.addEventListener('mousemove', (e) => {
+            const { clientX: x, clientY: y } = e;
+            document.querySelector('.cursor-dot').style.left = `${x}px`;
+            document.querySelector('.cursor-dot').style.top = `${y}px`;
+            document.querySelector('.cursor-outline').animate({ left: `${x}px`, top: `${y}px` }, { duration: 400, fill: "forwards" });
+            document.querySelectorAll('.orbital-card').forEach((card, i) => {
+                card.style.transform = `translate(${(x/window.innerWidth-0.5)*35*(i+1)}px, ${(y/window.innerHeight-0.5)*35*(i+1)}px)`;
+            });
+        });
+
+        window.addEventListener('scroll', () => {
+            document.querySelectorAll('.reveal').forEach(el => {
+                if (el.getBoundingClientRect().top < window.innerHeight - 50) el.classList.add('active');
+            });
+        });
+
         const canvas = document.getElementById('particle-canvas');
         const ctx = canvas.getContext('2d');
-        let particles = [];
+        let pts = [];
         function init() {
             canvas.width = window.innerWidth; canvas.height = window.innerHeight;
-            particles = Array.from({length: 50}, () => ({
-                x: Math.random() * canvas.width, y: Math.random() * canvas.height,
-                vx: Math.random() - 0.5, vy: Math.random() - 0.5
-            }));
+            pts = Array.from({length: 40}, () => ({x:Math.random()*canvas.width, y:Math.random()*canvas.height, vx:(Math.random()-0.5)*0.3, vy:(Math.random()-0.5)*0.3}));
         }
         function draw() {
-            ctx.clearRect(0,0,canvas.width, canvas.height);
-            ctx.fillStyle = "rgba(251, 191, 36, 0.2)";
-            particles.forEach(p => {
-                p.x += p.vx; p.y += p.vy;
-                if(p.x<0 || p.x>canvas.width) p.vx*=-1;
-                if(p.y<0 || p.y>canvas.height) p.vy*=-1;
-                ctx.beginPath(); ctx.arc(p.x, p.y, 1, 0, Math.PI*2); ctx.fill();
+            ctx.clearRect(0,0,canvas.width,canvas.height); ctx.fillStyle = "rgba(251,191,36,0.2)";
+            pts.forEach(p => {
+                p.x+=p.vx; p.y+=p.vy;
+                if(p.x<0||p.x>canvas.width) p.vx*=-1; if(p.y<0||p.y>canvas.height) p.vy*=-1;
+                ctx.beginPath(); ctx.arc(p.x,p.y,1.5,0,Math.PI*2); ctx.fill();
             });
             requestAnimationFrame(draw);
         }
         init(); draw();
-
-        // Local Time
-        setInterval(() => {
-            document.getElementById('local-time').innerText = new Date().toLocaleTimeString();
-        }, 1000);
     </script>
 </body>
 </html>
