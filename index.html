@@ -30,14 +30,43 @@
     </header>
 
     <section class="home" id="home">
-        <div class="home-content" data-aos="fade-up">
-            <h1 class="glitch-text">Building for the <span class="amber-glow">Future.</span></h1>
-            <p>I am Charity Silah, a <span id="typed"></span> crafting high-end digital experiences that prioritize user psychology and performance.</p>
-            <div class="social-icons">
-                <a href="https://github.com/Charity2024" class="magnetic-item"><i class='bx bxl-github'></i></a>
-                <a href="https://linkedin.com/in/charitysilah" class="magnetic-item"><i class='bx bxl-linkedin-square'></i></a>
+        <div class="kinetic-text">ARCHITECT • ENGINEER • VISIONARY</div>
+
+        <div class="home-content" data-aos="zoom-out-up">
+            <div class="hero-badge">
+                <span class="pulse-dot"></span> Available for 2026 Projects
             </div>
-            <a href="#projects" class="btn-premium">View My Work</a>
+            
+            <h1 class="glitch-text">
+                Designing <br>
+                <span class="amber-glow">Digital Realities.</span>
+            </h1>
+
+            <div class="hero-description">
+                <p>I am Charity Silah, a <span id="typed"></span> crafting high-end digital experiences that prioritize user psychology and performance.</p>
+            </div>
+
+            <div class="hero-cta-group">
+                <a href="#projects" class="btn-premium main-cta">
+                    <span>Discover the Vault</span>
+                    <i class='bx bx-right-arrow-alt'></i>
+                </a>
+                <div class="social-icons">
+                    <a href="https://github.com/Charity2024" class="magnetic-item"><i class='bx bxl-github'></i></a>
+                    <a href="https://linkedin.com/in/charitysilah" class="magnetic-item"><i class='bx bxl-linkedin-square'></i></a>
+                </div>
+            </div>
+        </div>
+
+        <div class="hero-decoration">
+            <div class="glass-tag tech-1">React / Next.js</div>
+            <div class="glass-tag tech-2">Django Expert</div>
+            <div class="glass-tag tech-3">UI Psychology</div>
+        </div>
+
+        <div class="scroll-down">
+            <div class="mouse"></div>
+            <span>SCROLL TO EXPLORE</span>
         </div>
     </section>
 
@@ -78,8 +107,8 @@
                 <div class="form-step" id="step-2">
                     <span class="form-label">02 — COMMUNICATION</span>
                     <input type="email" class="form-input" placeholder="Your email address?" id="email-input" required>
-                    <div class="form-nav">
-                        <button type="button" onclick="nextStep(1)" class="back-btn">Back</button>
+                    <div class="form-nav" style="display:flex; gap: 20px; align-items: center;">
+                        <button type="button" onclick="nextStep(1)" class="back-btn" style="background:none; border:none; color:#666; cursor:pointer;">Back</button>
                         <button type="submit" class="btn-premium">Initialize Contact</button>
                     </div>
                 </div>
@@ -88,25 +117,57 @@
     </section>
 
     <footer class="footer">
-        <div class="footer-cta-wrap" data-aos="fade-up">
-            <div class="cta-line">
-                <span class="outline-text">ESTABLISHED</span>
-                <span class="filled-text">2026</span>
+        <div class="footer-marquee">
+            <div class="marquee-inner">
+                <span>GET IN TOUCH • DESIGNING FOR TOMORROW • BUILD THE FUTURE • </span>
+                <span>GET IN TOUCH • DESIGNING FOR TOMORROW • BUILD THE FUTURE • </span>
             </div>
-            <div class="cta-line main-cta">
-                <span class="filled-text" data-decode data-value="LET'S BUILD">LET'S BUILD</span>
+        </div>
+
+        <div class="footer-main-content">
+            <div class="footer-cta-wrap" data-aos="fade-up">
+                <div class="cta-line top-line">
+                    <span class="outline-text">ESTABLISHED</span>
+                    <span class="filled-text">2026</span>
+                </div>
+                
+                <div class="cta-line main-cta">
+                    <span class="filled-text big-type" data-decode data-value="LET'S BUILD">LET'S BUILD</span>
+                </div>
+                
+                <div class="cta-line secondary-cta">
+                    <span class="outline-text big-type">THE</span>
+                    <span class="filled-text big-type amber-glow" data-decode data-value="FUTURE">FUTURE</span>
+                    <div class="footer-orb"></div>
+                </div>
             </div>
-            <div class="cta-line secondary-cta">
-                <span class="outline-text">THE</span>
-                <span class="filled-text" data-decode data-value="FUTURE">FUTURE</span>
-                <span class="accent-dot"></span>
+
+            <div class="footer-grid">
+                <a href="mailto:hello@charitysilah.com" class="grid-item magnetic-item">
+                    <span class="grid-label">ENQUIRIES</span>
+                    <span class="grid-value">EMAIL ME <i class='bx bx-right-top-arrow-circle'></i></span>
+                </a>
+                <a href="https://linkedin.com/in/charitysilah" class="grid-item magnetic-item">
+                    <span class="grid-label">NETWORK</span>
+                    <span class="grid-value">LINKEDIN <i class='bx bxl-linkedin'></i></span>
+                </a>
+                <a href="https://github.com/Charity2024" class="grid-item magnetic-item">
+                    <span class="grid-label">REPOSITORIES</span>
+                    <span class="grid-value">GITHUB <i class='bx bxl-github'></i></span>
+                </a>
             </div>
         </div>
         
         <div class="footer-bottom">
-            <div>&copy; 2026 Charity Silah.</div>
-            <div>LOCAL TIME: <span id="local-time">--:--</span></div>
-            <div class="status">STATUS: ONLINE</div>
+            <div class="bot-left">&copy; 2026 CHARITY SILAH</div>
+            <div class="bot-center">
+                <span class="system-tag">SYSTEM: SECURE</span>
+                <span class="system-tag">LOCAL TIME: <span id="local-time">--:--</span></span>
+            </div>
+            <div class="status-indicator-wrap">
+                <span class="pulse-dot"></span>
+                <span class="status">STATUS: ONLINE</span>
+            </div>
         </div>
     </footer>
 
@@ -130,7 +191,7 @@
             dot.style.left = `${e.clientX}px`;
             dot.style.top = `${e.clientY}px`;
             
-            const target = e.target.closest('a, button, .magnetic-item');
+            const target = e.target.closest('a, button, .magnetic-item, .grid-item');
             if (target) {
                 outline.classList.add('cursor-active');
                 const rect = target.getBoundingClientRect();
@@ -186,27 +247,33 @@
         initParticles(); draw();
         window.addEventListener('resize', initParticles);
 
-        // 4. Scramble Effect
+        // 4. Scramble Effect (Works on Hover)
         const letters = "ABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789";
         document.querySelectorAll("[data-decode]").forEach(el => {
-            el.addEventListener('mouseover', event => {
+            el.addEventListener('mouseenter', event => {
                 let iter = 0;
                 const val = event.target.dataset.value;
                 const interval = setInterval(() => {
-                    event.target.innerText = val.split("").map((l, i) => i < iter ? val[i] : letters[Math.floor(Math.random()*36)]).join("");
+                    event.target.innerText = val.split("").map((l, i) => {
+                        if(i < iter) return val[i];
+                        return letters[Math.floor(Math.random()*36)];
+                    }).join("");
                     if(iter >= val.length) clearInterval(interval);
                     iter += 1/3;
-                }, 35);
+                }, 40);
             });
         });
 
+        // 5. Form Logic
         function nextStep(s) {
             document.querySelectorAll('.form-step').forEach(e => e.classList.remove('active'));
             document.getElementById(`step-${s}`).classList.add('active');
         }
 
+        // 6. Real-time Clock
         setInterval(() => {
-            document.getElementById('local-time').innerText = new Date().toLocaleTimeString([], {hour: '2-digit', minute:'2-digit'});
+            const timeEl = document.getElementById('local-time');
+            if(timeEl) timeEl.innerText = new Date().toLocaleTimeString([], {hour: '2-digit', minute:'2-digit'});
         }, 1000);
     </script>
 </body>
